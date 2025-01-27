@@ -14,15 +14,15 @@ namespace ZeneProj
         {
             try
             {
-                string[] beolvasoTomb = File.ReadAllLines("zenek.csv");
+                string[] beolvasoTomb = File.ReadAllLines("zenek.txt");
                 for (int i = 0; i < beolvasoTomb.Length; i++)
                 {
 
-                    int id = Convert.ToInt32(beolvasoTomb[i].Split(';')[0]);
-                    string cim = beolvasoTomb[i].Split(';')[1];
-                    string szerzo = beolvasoTomb[i].Split(';')[2];
-                    string mufaj= beolvasoTomb[i].Split(';')[3];
-                    int kiadas = Convert.ToInt32(beolvasoTomb[i].Split(';')[4]);
+                    int id = Convert.ToInt32(beolvasoTomb[i].Split(',')[0]);
+                    string cim = beolvasoTomb[i].Split(',')[1];
+                    string szerzo = beolvasoTomb[i].Split(',')[2];
+                    string mufaj= beolvasoTomb[i].Split(',')[3];
+                    int kiadas = Convert.ToInt32(beolvasoTomb[i].Split(',')[4]);
 
                     Zenek adat = new Zenek(id,cim,szerzo,mufaj,kiadas);
                     Beolvasottak.Add(adat);

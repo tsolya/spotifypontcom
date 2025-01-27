@@ -10,7 +10,10 @@ namespace ZeneProj
     {
         
         private static void Main(string[] args) {
-
+            AdatBazisKezelo.KapcsolodasAdatbazishoz();
+            AdatBazisKezelo.SelectFromTable("zenek");
+            Fajlbeolvaso.Beolvasas();
+            AdatBazisKezelo.UjZene();
         }
     }
 }

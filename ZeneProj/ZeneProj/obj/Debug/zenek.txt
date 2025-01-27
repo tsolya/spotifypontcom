@@ -1,0 +1,10 @@
+1,The Weight,Dave Gozney,Industrial,1918
+2,Brown Eyed Girl,Selene Issard,Soca,1981
+3,Oh,Victor Rosgen,Moombahton,1964
+4,Moist Vagina,Jarvis Ezzell,Avant-garde,1995
+5,Rolling in the Deep,Sully Pren,Country,1936
+6,Verse Chorus Verse,Lilia Berthel,Drill,2007
+7,Torn,Alejoa Kareman,Shoegaze,1930
+8,Lounge Act,Babbette Howsam,Flamenco,1973
+9,One Love,Stafani Quilligan,Lo-fi,1993
+10,Back In Black,Marjorie Okill,Doom Metal,2005

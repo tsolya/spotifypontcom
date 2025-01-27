@@ -53,27 +53,35 @@ namespace ZeneProj
         }
         public static void UjZene()
         {
-            string ujCim = Fajlbeolvaso.Beolvasottak[0].Cim;
-            string ujSzerzo = Fajlbeolvaso.Beolvasottak[0].Szerzo;
-            string ujMufaj = Fajlbeolvaso.Beolvasottak[0].Mufaj;
-            int ujKiadas = Fajlbeolvaso.Beolvasottak[0].Kiadas;
+            Console.WriteLine("Elérhető zenék:");
+            int counter = 1;
+            foreach (var v in Fajlbeolvaso.Beolvasottak) {
+                Console.WriteLine($"{counter}. " + v.ToString());
+                counter++;
+            }
+
+            Console.WriteLine("Add meg melyik zenét szeretnéd hozzáadni a gyűjteményhez.");
+            int melyikzene = Convert.ToInt32(Console.ReadLine());
+            string ujCim = Fajlbeolvaso.Beolvasottak[melyikzene - 1].Cim;
+            string ujSzerzo = Fajlbeolvaso.Beolvasottak[melyikzene - 1].Szerzo;
+            string ujMufaj = Fajlbeolvaso.Beolvasottak[melyikzene - 1].Mufaj;
+            int ujKiadas = Fajlbeolvaso.Beolvasottak[melyikzene - 1].Kiadas;
 
 
             try
             {
                 using (MySqlCommand commandInsert = new MySqlCommand($"insert into zenek (cim, szerzo, mufaj, kiadas) values (@cim, @szerzo, @mufaj, @kiadas)", connection))
                 {
-                    //Paraméterként adjuk meg az utasítás értékeit.
+                    
                     commandInsert.Parameters.AddWithValue("@cim", ujCim);
                     commandInsert.Parameters.AddWithValue("@szerzo", ujSzerzo);
                     commandInsert.Parameters.AddWithValue("@mufaj", ujMufaj);
                     commandInsert.Parameters.AddWithValue("@kiadas", ujKiadas);
-                    //parancs végrehajtása:
+                    
                     commandInsert.ExecuteNonQuery();
 
                     Console.WriteLine("Sikeres INSERT!");
 
-                    //Lista újratöltés...
                     SelectFromTable("zenek");
                 }
             }
