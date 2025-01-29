@@ -16,7 +16,7 @@ namespace ZeneProj
 
         private static string connectionString = $"Server={server};Database={database};User ID={user};Password={password};";
         public static MySqlConnection connection = new MySqlConnection(connectionString);
-
+        public static List<Hallgatottsag> HallgatottsagList = new List<Hallgatottsag>();
         public static List<Zenek> ZenekList = new List<Zenek>();
         public static void KapcsolodasAdatbazishoz()
         {
@@ -28,6 +28,23 @@ namespace ZeneProj
             catch (Exception ex)
             {
                 Console.WriteLine("Hiba a kapcsolat megnyitásakor: " + ex.Message);
+            }
+        }
+        public static void HallgatottsagSelect(string tableName)
+        {
+            using (MySqlCommand command = new MySqlCommand($"select * from {tableName}", connection))
+            {
+                HallgatottsagList.Clear();
+                using (MySqlDataReader mySqlDataReader = command.ExecuteReader())
+                {
+                    while (mySqlDataReader.Read())
+                    {
+                         Hallgatottsag hallgatTemp = new Hallgatottsag (Convert.ToInt32(mySqlDataReader[0]),
+                                                         Convert.ToInt32(mySqlDataReader[1]),
+                                                         Convert.ToInt32(mySqlDataReader[2]));
+                        HallgatottsagList.Add(hallgatTemp);
+                    }
+                }
             }
         }
         public static void SelectFromTable(string tableName)

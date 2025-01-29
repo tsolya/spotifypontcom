@@ -97,6 +97,7 @@
   <ItemGroup>
     <Compile Include="AdatBazisKezelo.cs" />
     <Compile Include="Fajlbeolvaso.cs" />
+    <Compile Include="Hallgatottsag.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Zenek.cs" />

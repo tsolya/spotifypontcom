@@ -12,6 +12,7 @@ namespace ZeneProj
         private static void Main(string[] args) {
             AdatBazisKezelo.KapcsolodasAdatbazishoz();
             AdatBazisKezelo.SelectFromTable("zenek");
+            AdatBazisKezelo.HallgatottsagSelect("hallgatottsagtabla");
             Fajlbeolvaso.Beolvasas();
             AdatBazisKezelo.UjZene();
         }
