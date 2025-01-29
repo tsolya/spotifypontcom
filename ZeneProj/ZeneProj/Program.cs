@@ -15,6 +15,16 @@ namespace ZeneProj
             AdatBazisKezelo.HallgatottsagSelect("hallgatottsagtabla");
             Fajlbeolvaso.Beolvasas();
             AdatBazisKezelo.UjZene();
+            LegtobbetHallgatott();
+        }
+
+        private static void LegtobbetHallgatott()
+        {
+            int valtozo = 0;
+            for (int i = 0; i <AdatBazisKezelo.HallgatottsagList.Count; i++) { 
+                
+            }
+
         }
     }
 }
