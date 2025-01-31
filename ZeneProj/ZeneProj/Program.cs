@@ -23,7 +23,19 @@ namespace ZeneProj
 
         private static void LeghallgatottabbMufaj()
         {
-            
+            List<string> Mufajlist = new List<string>();
+            List<int> HallgatasSzam = new List<int>();
+            foreach (var x in AdatBazisKezelo.ZenekList) {
+                if (!Mufajlist.Contains(x.Mufaj))
+                {
+                    Mufajlist.Add(x.Mufaj);
+                }
+            }
+            for (int i = 0; i < AdatBazisKezelo.HallgatottsagList.Count; i++) {
+                HallgatasSzam[Mufajlist.IndexOf(AdatBazisKezelo.ZenekList[i].Mufaj)] += AdatBazisKezelo.HallgatottsagList[i].HallgatasSzam;
+            }
+
+
         }
 
         private static void Vonalak()
