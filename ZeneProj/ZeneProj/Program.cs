@@ -34,7 +34,8 @@ namespace ZeneProj
             for (int i = 0; i < AdatBazisKezelo.HallgatottsagList.Count; i++) {
                 HallgatasSzam[Mufajlist.IndexOf(AdatBazisKezelo.ZenekList[i].Mufaj)] += AdatBazisKezelo.HallgatottsagList[i].HallgatasSzam;
             }
-
+            string leghallgatottabbmufaj = Mufajlist[HallgatasSzam.IndexOf(HallgatasSzam.Max())];
+            Console.WriteLine(leghallgatottabbmufaj);
 
         }
 
