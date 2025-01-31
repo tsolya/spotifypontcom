@@ -17,7 +17,13 @@ namespace ZeneProj
             AdatBazisKezelo.UjZene();
             LegtobbetHallgatott();
             LeRegebbiLegujjabbZene();
+            LeghallgatottabbMufaj();
             Console.ReadKey();
+        }
+
+        private static void LeghallgatottabbMufaj()
+        {
+            
         }
 
         private static void Vonalak()
