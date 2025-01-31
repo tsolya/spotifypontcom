@@ -16,15 +16,47 @@ namespace ZeneProj
             Fajlbeolvaso.Beolvasas();
             AdatBazisKezelo.UjZene();
             LegtobbetHallgatott();
+            LeRegebbiLegujjabbZene();
+            Console.ReadKey();
+        }
+
+        private static void Vonalak()
+        {
+            Console.WriteLine("---------------------------------");
+        }
+
+        private static void LeRegebbiLegujjabbZene()
+        {
+            Zenek legregebbi = new Zenek(150,"asd","ursula","vmi",2025);
+            Zenek legujjabb = new Zenek();
+
+            foreach (var v in AdatBazisKezelo.ZenekList) {
+                if (v.Kiadas < legregebbi.Kiadas)
+                {
+                    legregebbi = v;
+                }
+                if(v.Kiadas > legujjabb.Kiadas){
+                    legujjabb = v;
+
+                }
+            }
+            Console.WriteLine($"Legrégebben kiadott zene címe : {legregebbi.Cim} \n Kiadási éve: {legregebbi.Kiadas}");
+            Console.WriteLine(" ");
+            Console.WriteLine($"Legújabban kiadott zene címe : {legujjabb.Cim} \n Kiadási éve: {legujjabb.Kiadas}");
+            Vonalak();
         }
 
         private static void LegtobbetHallgatott()
         {
-            int valtozo = 0;
-            for (int i = 0; i <AdatBazisKezelo.HallgatottsagList.Count; i++) { 
-                
+            Hallgatottsag valtozo = new Hallgatottsag();
+            for (int i = 0; i <AdatBazisKezelo.HallgatottsagList.Count; i++) {
+                if (AdatBazisKezelo.HallgatottsagList[i].HallgatasSzam>valtozo.HallgatasSzam)
+                {
+                    valtozo = AdatBazisKezelo.HallgatottsagList[i];
+                }
             }
-
+            Console.WriteLine($"A legtöbbet hallgatott előadó és zenéjének információja: {AdatBazisKezelo.ZenekList[valtozo.ZeneId].ToString()}\n Hallgatottság: {valtozo.HallgatasSzam}");
+            Vonalak();
         }
     }
 }
