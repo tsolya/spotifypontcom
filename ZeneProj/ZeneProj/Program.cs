@@ -47,7 +47,7 @@ namespace ZeneProj
             string leghallgatottabbmufaj = Mufajlist[HallgatasSzam.IndexOf(HallgatasSzam.Max())];
             int legtobbhallgatas = HallgatasSzam.Max();
             
-            Console.WriteLine($"A leghallgatottabb műfaj: {leghallgatottabbmufaj}\n Meghallgatások száma: {legtobbhallgatas}");
+            Console.WriteLine($"A leghallgatottabb műfaj: {leghallgatottabbmufaj}\n Meghallgatások száma: {legtobbhallgatas.ToString("N0")}");
             Vonalak();
             
 
@@ -91,7 +91,7 @@ namespace ZeneProj
                     valtozo = hallista[i];
                 }
             }
-            Console.WriteLine($"A legtöbbet hallgatott előadó és zenéjének információja: {zenelista[valtozo.ZeneId].ToString()}\n Hallgatottság: {valtozo.HallgatasSzam}");
+            Console.WriteLine($"A legtöbbet hallgatott előadó és zenéjének információja: {zenelista[valtozo.ZeneId].ToString()}\n Hallgatottság: {valtozo.HallgatasSzam.ToString("N0")}");
             Vonalak();
         }
     }
